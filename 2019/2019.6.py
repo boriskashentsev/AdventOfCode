@@ -15,8 +15,8 @@ def calucateDepth(element, dictionary, depth):
         depth = calucateDepth(child, dictionary, depth)
     return depth
 
-filename = "2019.6.test1.input"
-# filename = "2019.6.input"
+#filename = "2019/2019.6.test1.input"
+filename = "2019/2019.6.input"
 
 f = open(filename, "r")
 
@@ -49,6 +49,29 @@ for value in dictionary.values():
         root = value
         
 # print root.introduction()
-depth = 0
-depth = calucateDepth(root, dictionary, depth)
-print depth
+# depth = 0
+# depth = calucateDepth(root, dictionary, depth)
+# print depth
+
+you = dictionary["YOU"]
+san = dictionary["SAN"]
+
+routeYou = []
+routeSan = []
+
+while (you.parent):
+    routeYou.insert(0, you.name)
+    you = dictionary[you.parent]
+
+while (san.parent):
+    routeSan.insert(0, san.name)
+    san = dictionary[san.parent]
+
+print routeYou
+print routeSan
+
+i = 0
+while (routeSan[i] == routeYou[i]):
+    i += 1
+
+print len(routeYou) + len(routeSan) - 2*i - 2
