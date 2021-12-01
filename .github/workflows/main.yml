@@ -65,7 +65,15 @@ jobs:
 
           year: 2020                                                                                     # The year for which stats should be retrieved
           starsRegex: '(?<=https:\/\/img\.shields\.io\/badge\/2020%20⭐-)[0-9]+(?=-yellow)'             # Regular expression that finds the content of the stars badge iun your file.
-    
+
+      - uses: joblo2213/aoc-badges-action@v3
+        with:
+          userid: 365079                         # your user id, see setup on how to obtain
+          session: ${{ secrets.AOC_SESSION }}    # secret containing session code, see setup on how to obtain
+
+          year: 2021                                                                                     # The year for which stats should be retrieved
+          starsRegex: '(?<=https:\/\/img\.shields\.io\/badge\/2021%20⭐-)[0-9]+(?=-yellow)'             # Regular expression that finds the content of the stars badge iun your file.
+
       - uses: stefanzweifel/git-auto-commit-action@v4     # Step that pushes these local changes back to your github repo
         with:
           commit_message: Update badges
