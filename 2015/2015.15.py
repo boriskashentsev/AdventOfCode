@@ -12,14 +12,35 @@ def countCookieScore(ingredients, components, isPart1):
         texture += components[i]*ingredients[ingredients_keys[i]]['texture']
         calories += components[i]*ingredients[ingredients_keys[i]]['calories']
     
+    capacity = capacity if capacity > 0 else 0
+    durability = durability if durability > 0 else 0
+    flavor = flavor if flavor > 0 else 0
+    texture = texture if texture > 0 else 0
+    calories = calories if calories > 0 else 0
+    
     if isPart1:
+        return capacity*durability*flavor*texture
+    if calories == 500:
         return capacity*durability*flavor*texture
     return -1
 
-filename = "2015/15.test.input"
+def cooking(ingredients, components, index, maxNumberOfComponents, maxValue, isPart1):
+    if index >= len(components):
+        if sum(components) == 100:
+            return countCookieScore(ingredients, components, isPart1)
+        else:
+            return -1
+    for i in range(maxNumberOfComponents + 1):
+        components[index] = i
+        if sum(components) <= maxNumberOfComponents:
+            value = cooking(ingredients, components, index + 1, maxNumberOfComponents, maxValue, isPart1)
+            if value > maxValue:
+                maxValue = value
+    components[index] = 0
+    return maxValue
 
+filename = "2015/15.input"
 f = open(filename, "r")
-
 input = f.read().split("\n")
 
 ingredients = {}
@@ -34,6 +55,12 @@ for line in input:
                                 'calories': int(parts[10])}
 
 components = [0]*len(input)
-components[0] = 100
+result = cooking(ingredients, components, 0, 100, -1, True)
 
-print(countCookieScore(ingredients, components, True))
+print("Part 1", result)
+
+components = [0]*len(input)
+
+result = cooking(ingredients, components, 0, 100, -1, False)
+
+print("Part 2", result)
