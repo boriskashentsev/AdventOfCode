@@ -2,7 +2,6 @@ import sys
 import hashlib
 sys.path.append('./')
 from utils.filename import calculateFileName
-from functools import cmp_to_key
 
 filename = calculateFileName(sys.argv)
 f = open(filename, "r")
