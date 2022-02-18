@@ -22,19 +22,19 @@ for line in lines:
 
 # Part 1
 
-#molecules = set()
-#
-#maxKeyLen = max(list(map(lambda x: len(x), list(replacement.keys()))))
-#for i in range(len(startMolecule)):
-#    for j in range(1,maxKeyLen+1):
-#        possibleKey = startMolecule[i:min([i+j, len(startMolecule)])]
-#        if len(possibleKey) == j:
-#            if possibleKey in replacement.keys():
-#                for element in replacement[possibleKey]:
-#                    newMolecule = startMolecule[:i] + element + startMolecule[i+j:]
-#                    molecules.add(newMolecule)
-#
-#print(len(molecules))
+molecules = set()
+
+maxKeyLen = max(list(map(lambda x: len(x), list(replacement.keys()))))
+for i in range(len(startMolecule)):
+    for j in range(1,maxKeyLen+1):
+        possibleKey = startMolecule[i:min([i+j, len(startMolecule)])]
+        if len(possibleKey) == j:
+            if possibleKey in replacement.keys():
+                for element in replacement[possibleKey]:
+                    newMolecule = startMolecule[:i] + element + startMolecule[i+j:]
+                    molecules.add(newMolecule)
+
+print(len(molecules))
 
 # Part 2
 
