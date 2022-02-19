@@ -1,4 +1,3 @@
-from operator import contains
 import sys
 sys.path.append('./')
 from utils.filename import calculateFileName
