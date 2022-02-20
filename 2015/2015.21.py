@@ -82,11 +82,6 @@ def equipAndFight(hero, enemy):
                             minCost = hero['cost'] if minCost < 0 or minCost > hero['cost'] else minCost
                         else:
                             if maxCost < hero['cost']:
-                                print(hero)
-                                print(weapon)
-                                print(armor)
-                                print(ring1)
-                                print(ring2)
                                 maxCost = hero['cost']
                         equipAPiece(hero, ring1, -1)
                         equipAPiece(hero, ring2, -1)
