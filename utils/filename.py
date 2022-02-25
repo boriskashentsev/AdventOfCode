@@ -1,5 +1,5 @@
 def calculateFileName(args):
-    ''' Expects args[0] have format 'xxxx/yyyy.zz.py' or '.\xxxx\yyyy.zz.py' '''
+    ''' Expects args[0] have format 'aaaa/bbbb.cc.py' or '.\aaaa\bbbb.cc.py' '''
     filename =''
     names = []
     if '/' in args[0]:
