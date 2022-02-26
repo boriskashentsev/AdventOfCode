@@ -1,8 +1,6 @@
 import sys
 sys.path.append('./')
 from utils.filename import calculateFileName
-from utils.string import stringInsert
-from functools import reduce
 
 filename = calculateFileName(sys.argv)
 f = open(filename, "r")
