@@ -1,7 +1,6 @@
 import sys
 sys.path.append('./')
 from utils.filename import calculateFileName
-from copy import deepcopy
 
 filename = calculateFileName(sys.argv)
 f = open(filename, "r")
