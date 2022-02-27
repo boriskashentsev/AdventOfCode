@@ -1,4 +1,3 @@
-from msilib.schema import Directory
 import sys
 sys.path.append('./')
 from utils.filename import calculateFileName
