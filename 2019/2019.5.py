@@ -1,7 +1,7 @@
 def solver (instructions, user_input):
     loc = 0
     result = []
-    print "length", len(instructions)
+    print ("length", len(instructions))
     while (instructions[loc] != 99):
         instr = instructions[loc]
         de = instr % 100
@@ -48,7 +48,7 @@ def solver (instructions, user_input):
             arg2 = instructions[loc + 2] if (b == 1) else instructions[instructions[loc + 2]]
             instructions[instructions[loc + 3]] = 1 if (arg1 == arg2) else 0
             loc += 4
-        print loc
+        print(loc)
     return result
 
 
@@ -56,5 +56,5 @@ inpt = [3,225,1,225,6,6,1100,1,238,225,104,0,1102,67,92,225,1101,14,84,225,1002,
 # inpt = [3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99]
 
 result = solver(inpt, 5)
-print "Result"
-print result
+print ("Result")
+print (result)
