@@ -1,5 +1,4 @@
 import sys
-from re import findall
 
 sys.path.append('./')
 from utils.filename import calculateFileName
