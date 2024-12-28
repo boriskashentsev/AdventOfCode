@@ -119,6 +119,8 @@ print("Part 1: ", result)
 
 
 # Part 2
+# Slow? YES!
+# Will be optimized? Time will show.
 
 
 def goBack(
