@@ -44,9 +44,6 @@ def doWidthStep(
 ):
     dd = [[-1, 0], [0, 1], [1, 0], [0, -1]]
     while len(locations) > 0:
-        # print(locations)
-        # printImageFromDepth(depthMap)
-        # input()
         location = locations.pop(0)
         value = depthMap[location[0]][location[1]]
         for d in dd:
